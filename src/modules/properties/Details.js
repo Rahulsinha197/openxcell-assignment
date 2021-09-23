@@ -11,13 +11,6 @@ const contentStyle = {
 
 function Details() {
   const [info, setInfo] = useState();
-  const getBase64 = (file, cb) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function () {
-      cb(reader.result);
-    };
-  };
   useEffect(() => {
     let details = JSON.parse(localStorage.getItem("details"));
     setInfo(details || {});

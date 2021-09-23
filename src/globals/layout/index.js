@@ -1,5 +1,4 @@
 import React from "react";
-import { observer } from "mobx-react";
 import { Layout } from "antd";
 import Header from "./header";
 import Sider from "./sider";

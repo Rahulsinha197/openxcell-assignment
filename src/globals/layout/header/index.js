@@ -1,6 +1,5 @@
 import React from "react";
 import { Layout, Icon, Avatar, Popover } from "antd";
-import { inject, observer } from "mobx-react";
 import "./Header.scss";
 
 const { Header } = Layout;

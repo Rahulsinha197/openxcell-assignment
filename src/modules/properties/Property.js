@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { observable } from "mobx";
-import { observer, inject } from "mobx-react";
-import { Card, Table, Button, Tooltip, message, Select, Form } from "antd";
+import { Card, Table, Button, Tooltip, Select } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 import PageHeader from "../../globals/components/pageHeader/PageHeader";
 import Columns from "./Columns";
 import UpdateProperty from "./updateProperty/UpdateProperty";
 import { withRouter, useHistory } from "react-router-dom";
+import "./Properties.scss";
 
-const FormItem = Form.Item;
 const { Option } = Select;
 function Property() {
   const history = useHistory();
@@ -34,18 +33,8 @@ function Property() {
     const search = propertyList.filter((pl) => pl.locality.includes(value));
     setPropertyList(search);
   };
-  const apiFetch = async (data) => {
-    const response = await fetch("https://api.imgur.com/3/upload", {
-      method: "POST",
-      body: data,
-    });
-    console.log(response, 87);
-  };
   const addProperty = async (e, form) => {
-    console.log(form, e);
-    console.log("Here ");
     let updatedValues = [...propertyList, e];
-    console.log(e, 93);
     // for (const element of e.image.fileList) {
     //   const formData = new FormData();
     //   formData.append("image", element);
@@ -112,7 +101,7 @@ function Property() {
             <Button
               type="primary"
               shape="circle"
-              icon="ADD"
+              icon={<PlusOutlined />}
               size={"large"}
               onClick={toggleModal}
             />

@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Form, Input, Button, Select, Upload } from "antd";
-import { PlusOutlined } from "@ant-design/icons";
-import { observer } from "mobx-react";
-
-import { UploadOutlined } from "@ant-design/icons";
+import { Modal, Form, Input, Button, Select } from "antd";
 import "./Property.scss";
 
 const FormItem = Form.Item;
@@ -211,5 +207,4 @@ const UpdateProperty = ({ pm, form, isVisible, setVisible }) => {
   );
 };
 
-//export default Form.create()(observer(UpdateProperty));
 export default UpdateProperty;
